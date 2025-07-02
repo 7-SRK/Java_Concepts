@@ -3,6 +3,9 @@ package DesignPatterns.StructuralDesignPattern;
 import java.util.ArrayList;
 import java.util.List;
 
+//The Composite Pattern is a structural design pattern that allows you to compose objects
+// into tree-like structures to represent part-whole hierarchies.
+// It lets clients treat individual objects and compositions of objects uniformly.
 
 interface Box {
     double getPrice();
