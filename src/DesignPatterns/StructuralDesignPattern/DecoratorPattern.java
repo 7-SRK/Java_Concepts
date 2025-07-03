@@ -6,14 +6,14 @@ package DesignPatterns.StructuralDesignPattern;
 // the same interface, effectively "decorating" the object with additional features.
 
 interface A {
-    void doSomething();
+    void display();
 }
 
 // Concrete Component
 class ConcreteA implements A {
     @Override
-    public void doSomething() {
-        System.out.println("ConcreteA: Doing something");
+    public void display() {
+        System.out.println("ConcreteA: Hello World");
     }
 }
 
@@ -26,8 +26,8 @@ abstract class DecoratorA implements A {
     }
 
     @Override
-    public void doSomething() {
-        wrapped.doSomething();  // delegate call
+    public void display() {
+        wrapped.display();  // delegate call
     }
 }
 
@@ -39,8 +39,8 @@ class ConcreteDecoratorA extends DecoratorA {
     }
 
     @Override
-    public void doSomething() {
-        super.doSomething();  // call original behavior
+    public void display() {
+        super.display();  // call original behavior
         addedBehavior();     // add extra behavior
     }
 
@@ -53,10 +53,10 @@ public class DecoratorPattern {
     public static void main(String[] args) {
         A original = new ConcreteA();
         System.out.println("Original object:");
-        original.doSomething();
+        original.display();
 
         System.out.println("\nDecorated object:");
         A decorated = new ConcreteDecoratorA(original);
-        decorated.doSomething();
+        decorated.display();
     }
 }
