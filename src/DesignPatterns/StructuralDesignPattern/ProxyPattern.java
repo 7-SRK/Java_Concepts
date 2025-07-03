@@ -1,5 +1,12 @@
 package DesignPatterns.StructuralDesignPattern;
 
+//The Proxy Pattern acts as an intermediary between the client and the real object.
+
+//It provides a substitute or placeholder for another object.
+
+//The proxy controls access to the original object, allowing you to perform actions before or after forwarding the request.
+
+//It implements the same interface as the original object so it can be used interchangeably.
 
 interface E{
     void request();
