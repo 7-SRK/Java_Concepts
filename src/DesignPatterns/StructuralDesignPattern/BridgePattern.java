@@ -1,5 +1,7 @@
 package DesignPatterns.StructuralDesignPattern;
 
+//Bridge is a structural design pattern that divides business logic or huge class
+// into separate class hierarchies that can be developed independently.
 
 interface Restaurant {
     void preparePizza(String pizzaType);

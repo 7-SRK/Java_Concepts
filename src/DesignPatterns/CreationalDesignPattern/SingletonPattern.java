@@ -7,6 +7,9 @@ package DesignPatterns.CreationalDesignPattern;
 //Useful for resources that are expensive or logically should have only one instance,
 // such as database connections or configuration managers.
 
+// The volatile keyword in Java is used to indicate that a variable's value will be modified by different threads.
+// It ensures that changes to a variable are always visible to other threads, preventing thread caching issues.
+
 class Singleton {
     private static volatile Singleton instance;
     private String data;
