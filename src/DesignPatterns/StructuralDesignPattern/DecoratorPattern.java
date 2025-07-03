@@ -13,7 +13,7 @@ interface A {
 class ConcreteA implements A {
     @Override
     public void display() {
-        System.out.println("ConcreteA: Hello World");
+        System.out.println("ConcreteA : Hello World");
     }
 }
 
@@ -45,7 +45,7 @@ class ConcreteDecoratorA extends DecoratorA {
     }
 
     private void addedBehavior() {
-        System.out.println("ConcreteDecoratorA: Adding extra behavior");
+        System.out.println("ConcreteDecoratorA : Adding extra behavior");
     }
 }
 
@@ -58,5 +58,6 @@ public class DecoratorPattern {
         System.out.println("\nDecorated object:");
         A decorated = new ConcreteDecoratorA(original);
         decorated.display();
+
     }
 }
