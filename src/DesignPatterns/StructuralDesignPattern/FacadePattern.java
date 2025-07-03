@@ -8,44 +8,44 @@ package DesignPatterns.StructuralDesignPattern;
 //
 //The Facade class acts as a centralized point of access to various subsystem functionalities.
 
-class ServiceA {
-    public void operationA() {
-        System.out.println("ServiceA: Executing operation A");
-    }
-}
-
-
-class ServiceB {
+class B {
     public void operationB() {
-        System.out.println("ServiceB: Executing operation B");
+        System.out.println("B: Executing operation B");
     }
 }
 
 
-class ServiceC {
+class C {
     public void operationC() {
-        System.out.println("ServiceC: Executing operation C");
+        System.out.println("C: Executing operation C");
+    }
+}
+
+
+class D {
+    public void operationD() {
+        System.out.println("D: Executing operation D");
     }
 }
 
 // Facade class that simplifies interaction with subsystems
 class Facade {
-    private ServiceA serviceA;
-    private ServiceB serviceB;
-    private ServiceC serviceC;
+    private B serviceA;
+    private C serviceB;
+    private D serviceC;
 
     public Facade() {
-        serviceA = new ServiceA();
-        serviceB = new ServiceB();
-        serviceC = new ServiceC();
+        serviceA = new B();
+        serviceB = new C();
+        serviceC = new D();
     }
 
     // Simplified method combining multiple subsystem operations
-    public void doComplexOperation() {
+    public void doOperation() {
         System.out.println("Facade: Starting complex operation...");
-        serviceA.operationA();
-        serviceB.operationB();
-        serviceC.operationC();
+        serviceA.operationB();
+        serviceB.operationC();
+        serviceC.operationD();
         System.out.println("Facade: Complex operation completed.");
     }
 }
@@ -55,6 +55,6 @@ public class FacadePattern {
         Facade facade = new Facade();
 
 
-        facade.doComplexOperation();
+        facade.doOperation();
     }
 }
