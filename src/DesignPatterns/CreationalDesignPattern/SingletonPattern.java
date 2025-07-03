@@ -1,9 +1,9 @@
 package DesignPatterns.CreationalDesignPattern;
 
 //It restricts the instantiation of a class to a single object.
-//
+
 //Provides a global access point to that instance.
-//
+
 //Useful for resources that are expensive or logically should have only one instance,
 // such as database connections or configuration managers.
 
