@@ -12,7 +12,7 @@ interface H{
 
 class I{
     public void iRequest(){
-        System.out.println("I requested Called");
+        System.out.println("I-Requested Called");
     }
 }
 
