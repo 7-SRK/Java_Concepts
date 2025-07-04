@@ -30,22 +30,22 @@ class D {
 
 // Facade class that simplifies interaction with subsystems
 class Facade {
-    private B serviceA;
-    private C serviceB;
-    private D serviceC;
+    private B serviceB;
+    private C serviceC;
+    private D serviceD;
 
     public Facade() {
-        serviceA = new B();
-        serviceB = new C();
-        serviceC = new D();
+        serviceB = new B();
+        serviceC = new C();
+        serviceD = new D();
     }
 
     // Simplified method combining multiple subsystem operations
     public void doOperation() {
         System.out.println("Facade: Starting complex operation...");
-        serviceA.operationB();
-        serviceB.operationC();
-        serviceC.operationD();
+        serviceB.operationB();
+        serviceC.operationC();
+        serviceD.operationD();
         System.out.println("Facade: Complex operation completed.");
     }
 }
