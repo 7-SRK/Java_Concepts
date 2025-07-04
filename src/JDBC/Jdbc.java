@@ -7,7 +7,7 @@ public class Jdbc {
 
         String url = "jdbc:postgresql://localhost:5432/demo";
         String user = "postgres";
-        String pass = "qwerty";
+        String pass = "7059";
         String query = "select * from student order by sid;";
 
         //Class.forName("org.postgresql.Driver");
