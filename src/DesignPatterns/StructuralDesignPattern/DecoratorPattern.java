@@ -27,7 +27,7 @@ abstract class DecoratorA implements A {
 
     @Override
     public void display() {
-        wrapped.display();  // delegate call
+        wrapped.display();
     }
 }
 
