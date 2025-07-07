@@ -5,6 +5,10 @@ package DesignPatterns.StructuralDesignPattern;
 // This is achieved by wrapping the original object inside decorator classes that implement
 // the same interface, effectively "decorating" the object with additional features.
 
+//Dynamic behavior extension
+//Flexible addition of responsibilities
+
+
 interface A {
     void display();
 }

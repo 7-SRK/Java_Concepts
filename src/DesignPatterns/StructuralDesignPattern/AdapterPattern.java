@@ -6,6 +6,10 @@ package DesignPatterns.StructuralDesignPattern;
 
 //The adapter implements the client interface and internally calls the adaptee’s methods, translating calls as needed.
 
+//Interface compatibility
+
+//Reuse incompatible classes
+
 interface H{
     void request();
 }
@@ -16,6 +20,7 @@ class I{
     }
 }
 
+//Adapter Class
 class J implements H{
     private I adapter;
 

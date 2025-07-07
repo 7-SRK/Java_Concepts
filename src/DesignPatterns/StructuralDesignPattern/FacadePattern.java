@@ -40,7 +40,7 @@ class Facade {
         serviceD = new D();
     }
 
-    // Simplified method combining multiple subsystem operations
+
     public void doOperation() {
         System.out.println("Facade: Starting complex operation...");
         serviceB.operationB();
