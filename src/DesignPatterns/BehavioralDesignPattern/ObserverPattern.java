@@ -12,14 +12,14 @@ interface O {
     void update(String message);
 }
 
-// Subject interface
+
 interface P {
     void subscribe(O observer);
     void unsubscribe(O observer);
     void notifyObservers(String message);
 }
 
-// Concrete Subject (Publisher)
+
 class R implements P {
     private List<O> observers = new ArrayList<>();
 
@@ -48,7 +48,6 @@ class R implements P {
     }
 }
 
-// Concrete Observer 1: Email Notification
 class S implements O {
     private String email;
 
@@ -63,7 +62,6 @@ class S implements O {
     }
 }
 
-// Concrete Observer 2: Mobile App Notification
 class T implements O {
     private String username;
 

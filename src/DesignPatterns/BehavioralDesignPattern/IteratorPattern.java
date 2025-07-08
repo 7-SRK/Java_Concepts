@@ -13,12 +13,10 @@ interface U {
     String next();
 }
 
-// Aggregate interface
 interface V {
     U createIterator();
 }
 
-// Concrete Aggregate (Collection)
 class W implements V {
     private List<String> items = new ArrayList<>();
 
@@ -32,7 +30,6 @@ class W implements V {
     }
 }
 
-// Concrete Iterator
 class X implements U {
     private List<String> items;
     private int position = 0;
@@ -55,7 +52,6 @@ class X implements U {
     }
 }
 
-// Client
 public class IteratorPattern {
     public static void main(String[] args) {
         W collection = new W();
