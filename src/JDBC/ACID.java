@@ -14,6 +14,17 @@ public class ACID {
         con = DriverManager.getConnection(url,user,pass);
 
         con.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
+        //Prevents dirty and non-repeatable reads;  A Dirty read is a situation when a transaction reads data that has not yet been committed.
+        // phantom reads prevented in PostgreSQL.   Non-repeatable read occurs when a transaction reads the same row twice and gets a different value each time.
+        //Phantom Read occurs when two same queries are executed, but the rows retrieved by the two, are different.
+
+        //con.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
+        //Default in PostgreSQL. Prevents dirty reads;
+        //allows non-repeatable and phantom reads.
+
+        //con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+        //Strictest level; transactions appear fully isolated,
+        // preventing all anomalies.
 
         con.setAutoCommit(false); //disables auto-commit, allowing manual transaction control (commit/rollback).
 
@@ -106,3 +117,36 @@ public class ACID {
     }
 
 }
+
+
+// Pessimistic Locking
+
+//Assumes conflicts will happen, so it locks the data at the database level before any transaction modifies it.
+// The lock prevents other transactions from reading or writing the locked data until the lock is released.
+
+//When a transaction reads or updates a record, it acquires a lock (shared or exclusive).
+// Other transactions trying to access the same record must wait until the lock is released.
+
+//entityManager.find(Account.class, accountId, LockModeType.PESSIMISTIC_WRITE);
+
+//Optimistic Locking
+
+//Assumes conflicts are rare and does not lock data when reading.
+// Instead, it detects conflicts when committing by checking if the data was modified by another transaction since it was read.
+
+//Each entity has a version attribute annotated with @Version. When updating, the version is checked;
+// if it changed, an OptimisticLockException is thrown, indicating a conflict.
+
+//@Entity
+//public class Account {
+//    @Id
+//    private Long id;
+//
+//    @Version
+//    private Long version;
+//
+//    private double balance;
+//    // getters/setters
+//}
+
+//When updating, JPA automatically checks the version and throws OptimisticLockException if it changed.
