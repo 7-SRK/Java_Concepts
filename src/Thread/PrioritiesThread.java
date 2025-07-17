@@ -31,9 +31,6 @@ class Threadnopriority extends Thread {
 public class PrioritiesThread {
     public static void main(String[] args)
     {
-
-        // Creating objects of MyThread(above class)
-        // in the main() method
         Threadnopriority t1 = new Threadnopriority();
         Threadnopriority t2 = new Threadnopriority();
         Threadnopriority t3 = new Threadnopriority();
